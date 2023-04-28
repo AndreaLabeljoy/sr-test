@@ -27,10 +27,12 @@ Every time the collection is modified, because of a new game or a score change, 
 
 All code written by me, Andrea De Filippo, except where specified (Sorting and GUID generation). I followed what's considered to be the standard for VB6 code: generally CamelCase for variable names, prefixed with a letter indicating the type. All methods and modules have some kind of header showing information.
 
-### USE
+### RUN
 Run the executable file for a quick try. It has no digital signature, so it might cause the Windows SmartScreen to pop up. In case you decide to use the Exe file, you will need to register the ActiveX dll file with RegSvr32. Alternatively, open the project group file **FootballScoreBoardTest.vbg** in the VB6 IDE.
 
-Everything in the GUI should be self-explanatory.
+### GUI
+
+Everything in the GUI should be self-explanatory. As suggested, I did not spend much time on it, just a basic demo. A quick note on end game: it was requested that the score board be cleared upon ending a game, so when a closed game is selected in the listview, no information is shown. Alternatively, one could decide to still show the game as ended with start and end times.
 
 
 Thank you for considering me for the position.
