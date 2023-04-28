@@ -144,3 +144,16 @@ ERR_HANDLE:
     MsgBox Err.Description, vbCritical, MSGBOX_TITLE
 
 End Sub
+
+Private Sub txtHomeTeam_GotFocus()
+    ' Select all
+    txtHomeTeam.SelStart = 0
+    txtHomeTeam.SelLength = Len(txtHomeTeam.Text)
+End Sub
+
+Private Sub txtAwayTeam_GotFocus()
+    ' Select all
+    txtAwayTeam.SelStart = 0
+    txtAwayTeam.SelLength = Len(txtAwayTeam.Text)
+End Sub
+

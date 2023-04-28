@@ -194,12 +194,6 @@ Friend Function CheckScore(iNewScore As Integer, iOldScore As Integer, ByRef sEr
         Exit Function
     End If
     
-    ' Check for a score that is lower than the current
-    If iNewScore < iOldScore Then
-        sErr = "Score cannot be less than current score."
-        Exit Function
-    End If
-    
     ' Ok
     CheckScore = True
 
@@ -208,8 +202,13 @@ End Function
 Friend Function SortKey() As String
 ' Date   : 2023-04-27 14:05
 ' Purpose: Return a sort key for sorting by total score and start time
+Dim sScore As String
+Dim sStart As String
 
-    SortKey = (m_iHomeTeamScore + m_iAwayTeamScore) & "-" & CDbl(m_dGameStartTime)
+    ' Build fixed-length score key
+    sScore = Format$(m_iHomeTeamScore + m_iAwayTeamScore, "000")
+    sStart = Format$(m_dGameStartTime, "yyyymmddhhnnss")
+    SortKey = sScore & sStart
 
 End Function
 

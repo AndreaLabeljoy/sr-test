@@ -144,8 +144,6 @@ Private Sub cmdOk_Click()
 ' Date   : 2023-04-27 16:13
 ' Purpose: Validate scores and hide
 Dim sErr As String
-Dim iHome As Integer
-Dim iAway As Integer
 
     On Error GoTo ERR_HANDLE
     
@@ -167,28 +165,8 @@ Dim iAway As Integer
     End If
 
     ' Get scores
-    iHome = Val(txtHomeTeam.Text)
-    iAway = Val(txtAwayTeam.Text)
-    
-    ' Check scores
-    If iHome < 0 Or iAway < 0 Then
-        MsgBox "Negative numbers are not allowed.", vbExclamation, MSGBOX_TITLE
-        Exit Sub
-    End If
-    If iHome < m_oGame.HomeTeamScore Then
-        txtHomeTeam.SetFocus
-        MsgBox "The home team score (" & m_oGame.HomeTeamName & ") must be equal or greater than the current score (" & m_oGame.HomeTeamScore & ").", vbExclamation, MSGBOX_TITLE
-        Exit Sub
-    End If
-    If iAway < m_oGame.AwayTeamScore Then
-        txtAwayTeam.SetFocus
-        MsgBox "The guaest team score (" & m_oGame.AwayTeamName & ") must be equal or greater than the current score (" & m_oGame.AwayTeamScore & ").", vbExclamation, MSGBOX_TITLE
-        Exit Sub
-    End If
-
-    ' Scores validates
-    m_iNewHome = iHome
-    m_iNewAway = iAway
+    m_iNewHome = Val(txtHomeTeam.Text)
+    m_iNewAway = Val(txtAwayTeam.Text)
 
     ' Ok
     m_bSuccess = (m_oGame.HomeTeamScore <> m_iNewHome) Or (m_oGame.AwayTeamScore <> m_iNewAway)
@@ -249,3 +227,16 @@ Private Sub Form_Load()
     lblGuestTeam.Caption = m_oGame.AwayTeamName & ":"
 
 End Sub
+
+Private Sub txtHomeTeam_GotFocus()
+    ' Select all
+    txtHomeTeam.SelStart = 0
+    txtHomeTeam.SelLength = Len(txtHomeTeam.Text)
+End Sub
+
+Private Sub txtAwayTeam_GotFocus()
+    ' Select all
+    txtAwayTeam.SelStart = 0
+    txtAwayTeam.SelLength = Len(txtAwayTeam.Text)
+End Sub
+

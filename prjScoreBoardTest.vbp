@@ -1,6 +1,6 @@
 Type=Exe
 Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
-Reference=*\G{0D53DEF3-81A8-4470-8199-CA3A671999D3}#1.0#0#SportRadarScoreBoardLib.dll#SportRadar Football World Cup Score Board
+Reference=*\G{0D53DEF3-81A8-4470-8199-CA3A671999D3}#3.0#0#SportRadarScoreBoardLib.dll#SportRadar Football World Cup Score Board
 Form=frmMain.frm
 Form=frmNewGame.frm
 Object={831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0; mscomctl.OCX
@@ -17,7 +17,7 @@ Description="Football World Cup Score Board Example"
 CompatibleMode="0"
 MajorVer=1
 MinorVer=0
-RevisionVer=1
+RevisionVer=3
 AutoIncrementVer=1
 ServerSupportFiles=0
 VersionComments="Football World Cup Score Board Example application"

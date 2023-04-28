@@ -8,9 +8,7 @@ Attribute VB_Name = "modBubbleSort"
 '---------------------------------------------------------------------------------------
 Option Explicit
 
-Private Declare Function StrCmpLogicalW Lib "shlwapi" (ByVal s1 As String, ByVal s2 As String) As Integer
-
-Public Function BubbleSort(colGames As Collection) As Collection
+Public Function BubbleSort(colGames As clsGames) As Collection
 Dim i As Integer
 Dim j As Integer
 Dim tempVal As String
@@ -27,11 +25,12 @@ Dim asSort() As String
         Exit Function
     End If
     If colGames.Count = 1 Then
-        BubbleSort.Add colGames(1)
+        Set oGame = colGames(1)
+        BubbleSort.Add oGame, oGame.GameGuid
         Exit Function
     End If
 
-    ' Convert collection to array
+    ' Build array of sort keys
     ReDim asKeys(colGames.Count - 1)
     For i = 1 To colGames.Count
         Set oGame = colGames(i)
@@ -41,7 +40,7 @@ Dim asSort() As String
     ' Bubble sort
     For i = 0 To UBound(asKeys)
         For j = i To UBound(asKeys)
-            If StrCmpLogicalW(asKeys(i), asKeys(j)) = -1 Then
+            If StrComp(asKeys(i), asKeys(j)) = -1 Then
                 tempVal = asKeys(j)
                 asKeys(j) = asKeys(i)
                 asKeys(i) = tempVal
@@ -53,7 +52,7 @@ Dim asSort() As String
     For i = 0 To UBound(asKeys)
         asSort = Split(asKeys(i), vbTab)
         Set oGame = colGames(asSort(1))
-        BubbleSort.Add oGame, asSort(1)
+        BubbleSort.Add oGame, oGame.GameGuid
     Next i
     
 End Function

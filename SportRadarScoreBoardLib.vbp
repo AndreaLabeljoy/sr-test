@@ -1,5 +1,5 @@
 Type=OleDll
-Class=clsScoreBoard; clsScoreBoard.cls
+Class=clsGames; clsGames.cls
 Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
 Class=clsGame; clsGame.cls
 Module=modGuid; modGuid.bas
@@ -16,7 +16,7 @@ CompatibleMode="1"
 CompatibleEXE32="SportRadarScoreBoardLib.dll"
 MajorVer=1
 MinorVer=0
-RevisionVer=1
+RevisionVer=3
 AutoIncrementVer=1
 ServerSupportFiles=0
 VersionComments="SportRadar Football World Cup Score Board test for Andrea De Filippo."
