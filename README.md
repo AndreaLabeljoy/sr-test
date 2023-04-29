@@ -25,7 +25,7 @@ Every time the collection is modified, because of a new game or a score change, 
 
 ### CODE
 
-All code written by me, Andrea De Filippo, except where specified (Sorting and GUID generation). I followed what's considered to be the standard for VB6 code: generally CamelCase for variable names, prefixed with a letter indicating the type. All methods and modules have some kind of header showing information.
+All code written by me, Andrea De Filippo, except where specified (Sorting and GUID generation). I followed what's considered to be the standard for VB6 code: Hungarian notation for variable names, prefixed with a letter indicating the type. All methods and modules have some kind of header showing information.
 
 ### RUN
 Run the executable file for a quick try. It has no digital signature, so it might cause the Windows SmartScreen to pop up. In case you decide to use the Exe file, you will need to register the ActiveX dll file with RegSvr32. Alternatively, open the project group file **FootballScoreBoardTest.vbg** in the VB6 IDE.
